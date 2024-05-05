@@ -30,7 +30,7 @@ const Bars = () => {
         zIndex={"5"}
         p={3}
         sx={{
-          width: { xs: "70%", md: "40%" },
+          width: { xs: "78%", md: "40%" },
           display: { xs: "flex", lg: "none" },
         }}
         bgcolor={"white"}
@@ -161,7 +161,7 @@ const Bars = () => {
             Узб
           </Button>
         </Stack>
-        <Typography fontWeight={"400"} variant="h1" display={"flex"} mt={7} alignItems={"center"} fontSize={"25px"} color={'#202020'}><FiPhone/>+998 95 123 55 88</Typography>
+        <Typography fontWeight={"400"} variant="h1" display={"flex"} mt={7} alignItems={"center"}  color={'#202020'} sx={{fontSize:{xs:'20px',md:'25px'}}}><FiPhone/>+998 95 123 55 88</Typography>
       </Stack>
     </Stack>
   );
