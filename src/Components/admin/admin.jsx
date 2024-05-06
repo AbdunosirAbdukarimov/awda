@@ -1,12 +1,12 @@
 import { Fab, Stack, Typography } from "@mui/material";
 import React from "react";
 import { FiUser } from "react-icons/fi";
-import { MdProductionQuantityLimits } from "react-icons/md";
+import { IoBagAddOutline } from "react-icons/io5";
 
 const Admin = () => {
   return (
     <Stack>
-      <Stack width={'350px'}>
+      <Stack width={'350px'} borderRight={'1px solid #f2f2f2'}>
         <Stack flexDirection={"row"} alignItems={"center"} margin={"20px 0"} sx={{cursor:'pointer'}}>
           <Fab
             sx={{
@@ -28,7 +28,7 @@ const Admin = () => {
             Users
           </Typography>
         </Stack>
-        <Stack flexDirection={"row"} alignItems={"center"} padding={"20px 0"} sx={{cursor:'pointer'}} borderTop={"1px solid #909090"}>
+        <Stack flexDirection={"row"} alignItems={"center"} padding={"20px 0"} sx={{cursor:'pointer'}} borderTop={"1px solid #f2f2f2"}>
           <Fab
             sx={{
               transition: "all .2s linear",
@@ -42,7 +42,7 @@ const Admin = () => {
               },
             }}
           >
-            <MdProductionQuantityLimits />
+            <IoBagAddOutline />
           </Fab>
 
           <Typography variant="h1" fontSize={"16px"}>

@@ -7,7 +7,7 @@ import { List, MenuItem, Select, Typography } from "@mui/material";
 const NavTop = () => {
   return (
     <>
-      <Stack sx={{display:{xs: "none", lg: "flex"}}} width={"100%"} bgcolor={"#ED3729"} flexDirection={"row"} justifyContent={"center"} alignItems={"center"} padding={"13px"} color={"white"} >
+      <Stack sx={{display:{xs: "none", lg: "flex"}}} width={"100%"} bgcolor={"#ED3729"} flexDirection={"row"} justifyContent={"center"} alignItems={"center"} color={"white"} >
         <Typography fontWeight={"400"} variant="h6" display={"flex"} alignItems={"center"} fontSize={"14px"}><LocationOnIcon/>Toshkent</Typography>
         <List sx={{display:"flex",justifyContent:"center", fontWeight:"400", alignItems:"center", fontSize:"14px",gap:"30px", margin: "0 60px"}}>
           <li>Наши магазины</li>
