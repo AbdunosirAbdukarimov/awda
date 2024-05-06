@@ -15,6 +15,8 @@ import AuthService from "../../service/auth";
 import { seachProduct, signUserSuccess } from "../../slice/auth";
 import { useState } from "react";
 import Bars from "../Bars/Bars";
+import { MdAdminPanelSettings } from "react-icons/md";
+
 
 const Nav = () => {
   const dispatch = useDispatch()
@@ -216,6 +218,21 @@ const Nav = () => {
           </Link>
           <Typography variant="h6" fontSize={"14px"}>
             Корзина
+          </Typography>
+        </Typography>
+        <Typography
+          display={"flex"}
+          alignItems={"center"}
+          flexDirection={"column"}
+          variant="h6"
+          fontSize={"25px"}
+          margin={"0 10px"}
+        >
+          <Link style={{ height: "30px", color: "#202020" }} to={"/admin"}>
+            <MdAdminPanelSettings />
+          </Link>
+          <Typography variant="h6" fontSize={"14px"}>
+            Admin
           </Typography>
         </Typography>
       </Stack>

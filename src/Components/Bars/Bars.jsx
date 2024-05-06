@@ -14,7 +14,7 @@ import { FiPhone } from "react-icons/fi";
 
 
 const Bars = () => {
-  const [bars, setBars] = useState("0%");
+  const [bars, setBars] = useState("-600%");
   return (
     <Stack
       width={"100%"}
