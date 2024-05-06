@@ -65,7 +65,7 @@ const AdminProduct = () => {
             </Fab>
 
             <Typography variant="h1" fontSize={"16px"}>
-              Product
+              Product Add
             </Typography>
           </Stack>
         </Stack>

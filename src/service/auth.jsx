@@ -21,6 +21,10 @@ const AuthService = {
     const response = await axios.get(`/main/get_all_source?word=${word}&page=1&limit=25`);
     return response;
   },
+  getUserAll: async () => {
+    const response = await axios.get("/users/get");
+    return response;
+  },
 };
 
 export default AuthService;

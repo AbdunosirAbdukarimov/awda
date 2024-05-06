@@ -17,11 +17,10 @@ import { useState } from "react";
 import Bars from "../Bars/Bars";
 import { MdAdminPanelSettings } from "react-icons/md";
 
-
 const Nav = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const [ word, setWord] = useState('') 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [word, setWord] = useState("");
 
   const { loggedIn, user } = useSelector((state) => state.auth);
 
@@ -34,9 +33,9 @@ const Nav = () => {
     }
   };
   const handleSearch = () => {
-    navigate('/search');
-    dispatch(seachProduct(word))
-  }
+    navigate("/search");
+    dispatch(seachProduct(word));
+  };
 
   useEffect(() => {
     const token = getItem("token");
@@ -45,7 +44,6 @@ const Nav = () => {
       getUsers();
     }
   }, []);
-
   return (
     <Stack
       flexDirection={"row"}
@@ -71,9 +69,9 @@ const Nav = () => {
           borderRadius: "10px",
         }}
       >
-        <FaBars/>
+        <FaBars />
       </Button>
-      <Bars/>
+      <Bars />
       <Stack
         flexDirection={"row"}
         sx={{
@@ -118,7 +116,7 @@ const Nav = () => {
           sx={{ display: { xs: "none", md: "flex" }, color: "#BDBDBD" }}
         />
         <Button
-        onClick={() => handleSearch()}
+          onClick={() => handleSearch()}
           sx={{
             display: { xs: "none", md: "flex" },
             "&:hover": { backgroundColor: "#ED3729" },
@@ -183,7 +181,10 @@ const Nav = () => {
           fontSize={"25px"}
           margin={"0 10px"}
         >
-          <Link style={{ height: "30px", color: "#202020" }} to={"/filter/Laptops/get_laptops"}>
+          <Link
+            style={{ height: "30px", color: "#202020" }}
+            to={"/filter/Laptops/get_laptops"}
+          >
             <PiScales />
           </Link>
           <Typography variant="h6" fontSize={"14px"}>
@@ -220,21 +221,30 @@ const Nav = () => {
             Корзина
           </Typography>
         </Typography>
-        <Typography
-          display={"flex"}
-          alignItems={"center"}
-          flexDirection={"column"}
-          variant="h6"
-          fontSize={"25px"}
-          margin={"0 10px"}
-        >
-          <Link style={{ height: "30px", color: "#202020" }} to={"/admin/users"}>
-            <MdAdminPanelSettings />
-          </Link>
-          <Typography variant="h6" fontSize={"14px"}>
-            Admin
+        {user?.role == "admin" ? (
+          <Typography
+            display={"flex"}
+            alignItems={"center"}
+            flexDirection={"column"}
+            variant="h6"
+            fontSize={"25px"}
+            margin={"0 10px"}
+          >
+            <Link
+              style={{ height: "30px", color: "#202020" }}
+              to={"/admin/users"}
+            >
+              <MdAdminPanelSettings />
+            </Link>
+            <Typography variant="h6" fontSize={"14px"}>
+              Admin
+            </Typography>
           </Typography>
-        </Typography>
+        ) : (
+          <Typography           
+          >
+          </Typography>
+        )}
       </Stack>
     </Stack>
   );

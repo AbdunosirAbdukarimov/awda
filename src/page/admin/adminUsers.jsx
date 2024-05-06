@@ -1,13 +1,27 @@
 import { Box, Button, Fab, Stack, Typography } from "@mui/material";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { FiUser } from "react-icons/fi";
 import { IoBagAddOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import AuthService from "../../service/auth";
 
 const AdminUsers = () => {
   const navilgate = useNavigate();
+  const [ users, setUsers] = useState([])
 
-  
+  const getUsers = async () => {
+    try {
+      const response = await AuthService.getUserAll();
+      setUsers(response.data)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   return (
     <Stack>
@@ -71,13 +85,15 @@ const AdminUsers = () => {
               fontSize={"16px"}
               onClick={() => navilgate("/admin/product")}
             >
-              Product
+              Product Add
             </Typography>
           </Stack>
         </Stack>
-        <Stack flexDirection={'row'} flexWrap={'wrap'}>
-          <Box
-          width={'450px'}
+        <Stack flexDirection={"row"} flexWrap={"wrap"}>
+          {
+            users && users.map((item) => (
+              <Box
+            width={"450px"}
             ml={5}
             border={"1px solid #f2f2f2"}
             borderRadius={"4px"}
@@ -116,7 +132,7 @@ const AdminUsers = () => {
                   marginLeft={"10px"}
                   fontWeight={"600"}
                 >
-                  User
+                  {item.name}
                 </Typography>
               </Stack>
               <Button
@@ -149,7 +165,9 @@ const AdminUsers = () => {
                     fontWeight: "600",
                     fontSize: "15px",
                   }}
-                ></span>
+                >
+                  {item.name}
+                </span>
               </Typography>
               <Typography
                 variant="h1"
@@ -164,7 +182,9 @@ const AdminUsers = () => {
                     fontWeight: "600",
                     fontSize: "15px",
                   }}
-                ></span>
+                >
+                  {item.username}
+                </span>
               </Typography>
               <Typography
                 variant="h1"
@@ -196,11 +216,14 @@ const AdminUsers = () => {
                     fontWeight: "600",
                     fontSize: "15px",
                   }}
-                ></span>
+                >
+                  +{item.phone_number}
+                </span>
               </Typography>
             </Stack>
           </Box>
-          
+            ))
+          }
         </Stack>
       </Stack>
     </Stack>
