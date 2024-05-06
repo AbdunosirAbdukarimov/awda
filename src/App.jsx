@@ -8,7 +8,8 @@ import {
   Register,
   ShopCard,
 } from "./Components";
-import Admin from "./Components/admin/admin";
+import AdminProduct from "./page/admin/adminProduct";
+import AdminUsers from "./page/admin/adminUsers";
 import Favourites from "./page/Favourites";
 import Filter from "./page/Filter";
 import Home from "./page/Home";
@@ -38,7 +39,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
+          <Route path="/admin/product" element={<AdminProduct />} />
         </Routes>
       </div>
       <Footer />

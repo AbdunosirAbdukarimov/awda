@@ -228,7 +228,7 @@ const Nav = () => {
           fontSize={"25px"}
           margin={"0 10px"}
         >
-          <Link style={{ height: "30px", color: "#202020" }} to={"/admin"}>
+          <Link style={{ height: "30px", color: "#202020" }} to={"/admin/users"}>
             <MdAdminPanelSettings />
           </Link>
           <Typography variant="h6" fontSize={"14px"}>
